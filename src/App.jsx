@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import ScrambleText from './scramble';
 
@@ -7,6 +7,15 @@ function App() {
   
   // This state controls the pop-up modal
   const [showModal, setShowModal] = useState(true)
+
+  // Parallax Scroll State
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setOffsetY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-cyan-100 selection:text-cyan-900 relative no-scrollbar">
@@ -97,10 +106,14 @@ function App() {
         
         
         {/*'relative z-10' so content stays above picture*/}
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center">
-          {/* The Bg Image Layer */}
-          <div className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat">
-            <div className="absolute inset-0 bg-white/50"></div>
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+          
+          {/* Removed bg-fixed. Added scale-[1.15] and the inline style for math */}
+          <div 
+            className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat scale-[1.15]"
+            style={{ transform: `translateY(${offsetY * 0.6}px)` }}
+          >
+            <div className="absolute inset-0 bg-white/80"></div>
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
               <h2 className="text-5xl md:text-5xl font-bold text-black tracking-widest mb-6 uppercase">
@@ -126,7 +139,7 @@ function App() {
             </div>
         </section>
         {/*Video bg*/}
-        <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden mt-20">
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden mt">
           
           {/*bg vid*/}
           <video 
