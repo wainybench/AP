@@ -9,7 +9,7 @@ function App() {
   const [showModal, setShowModal] = useState(true)
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-cyan-100 selection:text-cyan-900 relative">
+    <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-cyan-100 selection:text-cyan-900 relative no-scrollbar">
       
       {/*pop up*/}
       {showModal && (
@@ -18,7 +18,7 @@ function App() {
           {/*Bg Overlay*/}
           <div 
             className="absolute inset-0 bg-white/80 backdrop-blur-sm transition-opacity"
-            onClick={() => setShowModal(false)} 
+            onClick={() => setShowModal(false)} SS
           ></div>
 
           {/*Info Panel*/}
@@ -92,35 +92,69 @@ function App() {
       </header>
 
       {/*Main Page*/}
-      <main className="relative min-h-screen flex items-center justify-center">
+      <main className="flex-grow flex flex-col">
         
-        {/* The Bg Image Layer */}
-        <div className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat">
-          <div className="absolute inset-0 bg-white/70"></div>
-        </div>
+        
         
         {/*'relative z-10' so content stays above picture*/}
-        <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-center text-center">
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center">
+          {/* The Bg Image Layer */}
+          <div className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat">
+            <div className="absolute inset-0 bg-white/50"></div>
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+              <h2 className="text-5xl md:text-5xl font-bold text-black tracking-widest mb-6 uppercase">
+                <span className="text-cyan-500"><ScrambleText text="Welcome" /> <ScrambleText text="To" /> <ScrambleText text="Aero" /> <ScrambleText text="JC" /></span>
+              </h2>
+              
+              <h1 className="text-3xl md:text-3xl max-w-4xl text-black mb-6 font-medium tracking-[0.3em] uppercase">
+                Design <span className="mx-2 font-light text-cyan-500">|</span> Build <span className="mx-2 font-light text-cyan-500">|</span> Fly
+              </h1>
+              
+              <p className="max-w-4xl text-lg md:text-2xl text-gray-900 mb-12 font-medium tracking-wide">
+                We aim high, literally.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 mt-4">
+                <button className="px-10 py-5 border-2 border-gray-200 text-sm font-bold text-gray-500 bg-white/80 hover:bg-gray-50 hover:text-black transition-colors duration-300 uppercase tracking-[0.2em]">
+                  Explore Our Products
+                </button>
+                <button className="px-10 py-5 border-2 border-gray-200 text-sm font-bold text-gray-500 bg-white/80 hover:bg-gray-50 hover:text-black transition-colors duration-300 uppercase tracking-[0.2em]">
+                  Know More About Us
+                </button>
+              </div>
+            </div>
+        </section>
+        {/*Video bg*/}
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden mt-20">
           
-          <h2 className="text-5xl md:text-5xl font-bold text-black tracking-widest mb-6 uppercase">
-             <span className="text-cyan-500"><ScrambleText text="Welcome" /> <ScrambleText text="To" /> <ScrambleText text="Aero" /> <ScrambleText text="JC" /></span>
-          </h2>
+          {/*bg vid*/}
+          <video 
+            autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0"
+            
+          >
+            {/* I put a cool placeholder airplane video here. Replace the src with your own video! */}
+            <source src="/ajc25east.mp4" type="video/mp4" />
+          </video>
+
           
-          <h1 className="text-3xl md:text-3xl max-w-4xl text-black mb-6 font-medium tracking-[0.3em] uppercase">
-            Design <span className="mx-2 font-light text-cyan-500">|</span> Build <span className="mx-2 font-light text-cyan-500">|</span> Fly
-          </h1>
-          
-          <p className="max-w-4xl text-lg md:text-2xl text-gray-900 mb-12 font-medium tracking-wide">
-            We aim high, literally.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 mt-4">
-            <button className="px-10 py-5 border-2 border-gray-200 text-sm font-bold text-gray-500 bg-white/80 hover:bg-gray-50 hover:text-black transition-colors duration-300 uppercase tracking-[0.2em]">
-              Explore Our Products
-            </button>
-            <button className="px-10 py-5 border-2 border-gray-200 text-sm font-bold text-gray-500 bg-white/80 hover:bg-gray-50 hover:text-black transition-colors duration-300 uppercase tracking-[0.2em]">
-              Know More About Us
-            </button>
+          {/*Overlaty*/}
+          <div className="absolute inset-0 z-0 bg-black/60"></div>
+
+          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
+            
+            <h2 className="text-cyan-400 font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4">
+              Our Story
+            </h2>
+            
+            <h3 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-widest uppercase">
+              middle part
+            </h3>
+            
+            <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide max-w-2xl">
+              lower part
+            </p>
+
           </div>
         </section>
       </main>

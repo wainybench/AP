@@ -1,10 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Creating custom color variables for Aero JC */
-  --color-ajc-black: #121212;
-  --color-ajc-charcoal: #333333;
-  --color-ajc-green: #00FF41;
-  --color-ajc-platinum: #E0E0E0;
-  --color-ajc-white: #FFFFFF;
+  /* The "Navy Aviation" Design System */
+  --color-ajc-navy: #1A222C;    /* The deep background from your image */
+  --color-ajc-surface: #24303E; /* Slightly lighter navy for the modal panel */
+  --color-ajc-sky: #38BDF8;     /* Bright aviation blue for buttons/hovers */
+  --color-ajc-white: #FFFFFF;   /* Primary text and logo */
+  --color-ajc-slate: #94A3B8;   /* Muted gray-blue for secondary text/paragraphs */
+}
+
+/* Nuke the scrollbar globally for the entire page */
+html, body, #root {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar, #root::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
