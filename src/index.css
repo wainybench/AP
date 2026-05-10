@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* Creating custom color variables for Aero JC */
+  --color-ajc-black: #121212;
+  --color-ajc-charcoal: #333333;
+  --color-ajc-green: #00FF41;
+  --color-ajc-platinum: #E0E0E0;
+  --color-ajc-white: #FFFFFF;
+}
