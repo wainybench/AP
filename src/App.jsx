@@ -22,7 +22,7 @@ function App() {
       
       {/*pop up*/}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
           
           {/*Bg Overlay*/}
           <div 
@@ -100,7 +100,7 @@ function App() {
       </header>
 
       {/*Main Page*/}
-      <main className="flex-grow flex flex-col">
+      <main className="grow flex flex-col">
         
         
         
