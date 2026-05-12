@@ -170,6 +170,73 @@ function App() {
 
           </div>
         </section>
+        <section className="relative w-full min-h-[80vh] flex-col text-center overflow-hidden mt">
+              <h1 className="text-4xl text-black font-bold tracking-wide align-center items-start mt-20">Our Sponsors</h1>
+
+              {/*1*/}
+               <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
+                <div>
+                  <img 
+                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                  />
+                </div>
+                <div className="text-left flex flex-col justify-center max-w-2xl">
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks, developed by Dassault Systèmes, is a premier CAD software for 3D design and engineering.</p>
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks is offering free premium software to our club members.</p>
+                  <p className="text-gray-500 text-sm mt-2">• This helps us design, model and iterate efficiently.</p>
+                </div>
+
+              </div>
+
+              {/*2*/}
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
+
+                <div className="text-left flex flex-col justify-center max-w-2xl">
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks, developed by Dassault Systèmes, is a premier CAD software for 3D design and engineering.</p>
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks is offering free premium software to our club members.</p>
+                  <p className="text-gray-500 text-sm mt-2">• This helps us design, model and iterate efficiently.</p>
+                </div>
+
+                <div>
+                  <img 
+                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                  />
+                </div>
+
+              </div>
+              {/*3*/}
+               <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
+                <div>
+                  <img 
+                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                  />
+                </div>
+                <div className="text-left flex flex-col justify-center max-w-2xl">
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks, developed by Dassault Systèmes, is a premier CAD software for 3D design and engineering.</p>
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks is offering free premium software to our club members.</p>
+                  <p className="text-gray-500 text-sm mt-2">• This helps us design, model and iterate efficiently.</p>
+                </div>
+
+              </div>
+
+              {/*4*/}
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
+
+                <div className="text-left flex flex-col justify-center max-w-2xl">
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks, developed by Dassault Systèmes, is a premier CAD software for 3D design and engineering.</p>
+                  <p className="text-gray-500 text-sm mt-2">• SolidWorks is offering free premium software to our club members.</p>
+                  <p className="text-gray-500 text-sm mt-2">• This helps us design, model and iterate efficiently.</p>
+                </div>
+
+                <div>
+                  <img 
+                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                  />
+                </div>
+
+              </div>
+
+        </section>
       </main>
 
     </div>
