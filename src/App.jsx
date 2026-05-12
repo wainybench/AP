@@ -142,11 +142,8 @@ function App() {
           
           {/*bg vid*/}
           <video 
-            autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0"
-            
-          >
-            {/* I put a cool placeholder airplane video here. Replace the src with your own video! */}
-            <source src="/ajc25east.mp4" type="video/mp4" />
+            autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="ajc25east.mp4" type="video/mp4" />
           </video>
 
           
@@ -176,7 +173,7 @@ function App() {
                <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
                 <div>
                   <img 
-                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                    src="SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
                   />
                 </div>
                 <div className="text-left flex flex-col justify-center max-w-2xl">
@@ -198,7 +195,7 @@ function App() {
 
                 <div>
                   <img 
-                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                    src="SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
                   />
                 </div>
 
@@ -207,7 +204,7 @@ function App() {
                <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
                 <div>
                   <img 
-                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                    src="SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
                   />
                 </div>
                 <div className="text-left flex flex-col justify-center max-w-2xl">
@@ -229,7 +226,7 @@ function App() {
 
                 <div>
                   <img 
-                    src="/SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                    src="SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
                   />
                 </div>
 
@@ -239,10 +236,14 @@ function App() {
       </main>
 
 
-      <footer className="bg-gray-900 backdrop-blur-md top-0 z-50 shadow-md mt-30 md-20">
+      <footer className="bg-gray-900 backdrop-blur-md top-0 z-50 flex-row border-t-20 border-gray-900 shadow-md mt-30 md-20">
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           {/*Logo*/}
-          <logo><img src='/AEROLOGO.avif' alt='Logo'></img></logo>'
+          <logo><img src='AEROLOGO.avif' alt='Logo'></img></logo>'
+        </div>
+        <div><p>Hi Hello</p></div>
+        <div className="text-center text-white text-sm">
+          &copy; 2024 Aero JC. All rights reserved.
         </div>
       </footer>
 
