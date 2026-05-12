@@ -73,7 +73,6 @@ function App() {
                   className="h-full w-full object-contain brightness-0" 
                 />
               </div>
-              {/* <span className="text-2xl font-bold text-black tracking-wider uppercase">Aero JC</span> */}
             </a>
 
             {/*Nav Links*/}
@@ -238,6 +237,14 @@ function App() {
 
         </section>
       </main>
+
+
+      <footer className="bg-gray-900 backdrop-blur-md top-0 z-50 shadow-md mt-30 md-20">
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          {/*Logo*/}
+          <logo><img src='/AEROLOGO.avif' alt='Logo'></img></logo>'
+        </div>
+      </footer>
 
     </div>
   )
