@@ -3,26 +3,60 @@ import './App.css'
 import ScrambleText from './scramble';
 
 function App() {
+  const[loading, setloading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  
-  // This state controls the pop-up modal
+  const [progress, setProgress] = useState(0);
+  //popup
   const [showModal, setShowModal] = useState(true)
-
-  // Parallax Scroll State
+  //parallax math
   const [offsetY, setOffsetY] = useState(0);
+  //TIMER FOR LOADING
+  useEffect(() => {const interval = setInterval(() => {
+              setProgress((oldProgress) => {
+                    if (oldProgress >= 100) {
+                      clearInterval(interval);
+                      setTimeout(() => setloading(false), 300); 
+                      return 100;
+                    }
+              return oldProgress + 1;
+              });
+    }, 25); //25ms*100 = 2500ms
+    
+    return () => clearInterval(interval);
+  }, []);
 
-  useEffect(() => {
+  //pARA MATH
+    useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+ 
+
   return (
+    
     <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-cyan-100 selection:text-cyan-900 relative no-scrollbar">
-      
+      {/*loading page*/}
+      <div className={`fixed inset-0 z-100 bg-gray-950 flex flex-col items-center justify-center transition-opacity duration-1000 ease-in-out ${loading ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+         <div className="h-24 w-24 animate-pulse flex flex-col items-center">
+            <img src="AEROLOGO.avif" alt="Loading..." className="w-full h-auto" />
+         </div>
+         {/*prog bar*/}
+         <div className="w-80 mt-8 flex flex-col items-center">
+            <div className="w-full h-[2px] bg-gray-900 overflow-hidden">
+               <div 
+                 className="h-full bg-white shadow-[0_0_10px_rgba(6,182,212,0.8)] transition-all duration-10 ease-out" 
+                 style={{ width: `${progress}%` }}
+               ></div>
+            </div>
+         </div>
+      </div>
+
       {/*pop up*/}
       {showModal && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-90 flex items-center justify-center p-4">
           
           {/*Bg Overlay*/}
           <div 
@@ -102,12 +136,9 @@ function App() {
       {/*Main Page*/}
       <main className="grow flex flex-col">
         
-        
-        
-        {/*'relative z-10' so content stays above picture*/}
+        {/*Hero*/}
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
           
-          {/* Removed bg-fixed. Added scale-[1.15] and the inline style for math */}
           <div 
             className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat scale-[1.15]"
             style={{ transform: `translateY(${offsetY * 0.6}px)` }}
@@ -219,14 +250,14 @@ function App() {
               <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
 
                 <div className="text-left flex flex-col justify-center max-w-2xl">
-                  <p className="text-gray-500 text-sm mt-2">• SolidWorks, developed by Dassault Systèmes, is a premier CAD software for 3D design and engineering.</p>
-                  <p className="text-gray-500 text-sm mt-2">• SolidWorks is offering free premium software to our club members.</p>
-                  <p className="text-gray-500 text-sm mt-2">• This helps us design, model and iterate efficiently.</p>
+                  <p className="text-gray-500 text-sm mt-2">• HeheHaha.</p>
+                  <p className="text-gray-500 text-sm mt-2">• JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ.</p>
+                  <p className="text-gray-500 text-sm mt-2">• Please sponsor us Please sponsor us.</p>
                 </div>
 
                 <div>
                   <img 
-                    src="SWlogo.png" alt="SolidWorks Logo" className="h-full w-full object-contain brightness-100" 
+                    src="RBlogo.svg" alt="SolidWorks Logo" className="h-40 w-100 object-contain brightness-100" 
                   />
                 </div>
 
@@ -243,7 +274,10 @@ function App() {
         </div>
         <div><p>Hi Hello</p></div>
         <div className="text-center text-white text-sm">
-          &copy; 2024 Aero JC. All rights reserved.
+          &copy; 2026 Aero JC. All rights reserved.(To Macimus :P)
+        </div>
+        <div className="text-center text-white text-xs mt-2">
+          This is a test website for Aero JC, a high school aerospace club. It is not an official site and is only meant to showcase web design skills. Please do not take any information on this site seriously. For official information, please visit our actual website or contact us directly.
         </div>
       </footer>
 
