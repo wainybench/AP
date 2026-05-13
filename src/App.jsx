@@ -114,7 +114,7 @@ function App() {
               <a href="#shop" className="text-gray-600 hover:text-cyan-500 font-medium transition-colors duration-300 uppercase tracking-wide">Shop</a>
               <a href="#about" className="text-gray-600 hover:text-cyan-500 font-medium transition-colors duration-300 uppercase tracking-wide">About Us</a>
               <a href="#gallery" className="text-gray-600 hover:text-cyan-500 font-medium transition-colors duration-300 uppercase tracking-wide">Gallery</a>
-              <a href="#contact" className="text-gray-600 hover:text-cyan-500 font-medium transition-colors duration-300 uppercase tracking-wide">Contact Us</a>
+              <a href="https://www.aerojc.in/" className="text-gray-600 hover:text-cyan-500 font-medium transition-colors duration-300 uppercase tracking-wide">Contact Us</a>
             </nav>
 
             {/* Mobile Menu Button 
@@ -140,7 +140,7 @@ function App() {
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
           
           <div 
-            className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-center bg-no-repeat scale-[1.15]"
+            className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-top bg-no-repeat scale-[1.15]"
             style={{ transform: `translateY(${offsetY * 0.6}px)` }}
           >
             <div className="absolute inset-0 bg-white/80"></div>
