@@ -45,7 +45,7 @@ function App() {
          </div>
          {/*prog bar*/}
          <div className="w-80 mt-8 flex flex-col items-center">
-            <div className="w-full h-[2px] bg-gray-900 overflow-hidden">
+            <div className="w-full h-2px bg-gray-900 overflow-hidden">
                <div 
                  className="h-full bg-white shadow-[0_0_10px_rgba(6,182,212,0.8)] transition-all duration-10 ease-out" 
                  style={{ width: `${progress}%` }}
@@ -277,7 +277,7 @@ function App() {
           &copy; 2026 Aero JC. All rights reserved.(To Macimus :P)
         </div>
         <div className="text-center text-white text-xs mt-2">
-          This is a test website for Aero JC, a high school aerospace club. It is not an official site and is only meant to showcase web design skills. Please do not take any information on this site seriously. For official information, please visit our actual website or contact us directly.
+          This is a test website for Aero JC, an aeromodelling club. It is not an official site and is only meant to showcase web design skills. Please do not take any information on this site seriously. For official information, please visit our actual website or contact us directly.
         </div>
       </footer>
 
