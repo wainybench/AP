@@ -141,7 +141,7 @@ function App() {
           
           <div 
             className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-top bg-no-repeat scale-[1.15]"
-            style={{ transform: `translateY(${offsetY * 0.6}px)` }}
+            style={{ transform: `translateY(${offsetY * 0.3}px)` }}
           >
             <div className="absolute inset-0 bg-white/60"></div>
           </div>
@@ -267,13 +267,23 @@ function App() {
       </main>
 
 
-      <footer className="bg-gray-900 backdrop-blur-md top-0 z-50 flex-row border-t-20 border-gray-900 shadow-md mt-30 md-20">
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          {/*Logo*/}
-          <logo><img src='AEROLOGO.avif' alt='Logo'></img></logo>'
+      <footer className="bg-gray-900 backdrop-blur-md top-0 z-50 flex-col border-t-20 items-center border-gray-900 shadow-md mt-30 py-4 px-4">
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"> 
+          <div>
+            {/*Logo*/}
+             <logo><img src='AEROLOGO.avif' alt='Logo'></img></logo>'
+          </div>
+          <nav className="flex flex-wrap items-center justify-center md:justify-end md:flex-col gap-6 text-sm font-medium">
+            <a href="#terms" className="text-gray-400 hover:text-cyan-500 transition-colors">Terms & Conditions</a>
+            <a href="#refunds" className="text-gray-400 hover:text-cyan-500 transition-colors">Refund & Policies</a>
+            <a href="mailto:aerojcteam@gmail.com" className="text-gray-400 hover:text-cyan-500 transition-colors">Contact Us</a>
+            <a href="#other" className="text-gray-400 hover:text-cyan-500 transition-colors">Other Field</a>
+          </nav>
+          <div className="items-right">
+            <logo><img src="UniLogo.avif" alt="Logo" className="h-30 w-50"></img></logo>
+          </div>
         </div>
-        <div><p>Hi Hello</p></div>
-        <div className="text-center text-white text-sm">
+        <div className="text-center text-white text-sm mt-10">
           &copy; 2026 Aero JC. All rights reserved.(To Macimus :P)
         </div>
         <div className="text-center text-white text-xs mt-2">
