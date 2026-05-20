@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 export default function Gallery() {
+  //img enlarge
+  const [fullscreenImage, setFullscreenImage] = useState(null);
+
   return (
     <section className="w-full max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
       
@@ -11,7 +16,7 @@ export default function Gallery() {
         
         {/*1*/}
         {/*Parent Cont for photos 1*/}
-        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0">
+        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0" onClick={() => setFullscreenImage("gal1.avif")}>
           
           {/*Indi photos*/}
           <img 
@@ -38,7 +43,7 @@ export default function Gallery() {
         </figure>
 
         {/*2*/}
-        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0">
+        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0" onClick={() => setFullscreenImage("gal2.avif")}>
           <img src="gal2.avif" alt="Event" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           <div className="absolute inset-0 bg-neutral-900/60 flex flex-col items-center justify-center text-center p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-20">
             <h4 className="text-white text-2xl tracking-0.1em uppercase font-light m-0">
@@ -52,7 +57,7 @@ export default function Gallery() {
         </figure>
 
         {/*3*/}
-        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0">
+        <figure className="relative overflow-hidden cursor-pointer aspect-video group m-0" onClick={() => setFullscreenImage("gal3.avif")}>
           <img src="gal3.avif" alt="Event" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           <div className="absolute inset-0 bg-neutral-900/60 flex flex-col items-center justify-center text-center p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-20">
             <h4 className="text-white text-2xl tracking-0.1em uppercase font-light m-0">
@@ -66,6 +71,22 @@ export default function Gallery() {
         </figure>
 
       </div>
+
+      {fullscreenImage && (
+        <div 
+          className="fixed inset-0 z-100 bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+          onClick={() => setFullscreenImage(null)}
+        >
+          
+          {/* The giant image */}
+          <img 
+            src={fullscreenImage} 
+            alt="Fullscreen View" 
+            className="max-w-full max-h-full object-contain shadow-2xl"
+          />
+          
+        </div>
+      )}
     </section>
   );
 }
