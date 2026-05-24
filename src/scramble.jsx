@@ -31,7 +31,7 @@ const ScrambleText = ({ text }) => {
         setDisplayText(text); 
       }
 
-      iteration += 0.5 ; // Increase by 0.2 to slow down the reveal a bit, adjust as needed
+      iteration += 0.7 ; // Increase by 0.2 to slow down the reveal a bit, adjust as needed
     }, 40); // Adjust the interval time for faster/slower scrambling effect
   };
 

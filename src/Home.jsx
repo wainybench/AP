@@ -159,8 +159,8 @@ What began as an initiative by six passionate students has grown into a multidis
 
                 <div className="text-left flex flex-col justify-center max-w-2xl">
                   <p className="text-gray-500 text-sm mt-2">• HeheHaha.</p>
-                  <p className="text-gray-500 text-sm mt-2">• JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ.</p>
-                  <p className="text-gray-500 text-sm mt-2">• Please sponsor us Please sponsor us.</p>
+                  <p className="text-gray-500 text-sm mt-2">• Nah Lil Bro, they aint doing ts.</p>
+                  <p className="text-gray-500 text-sm mt-2">• Please sponsor us?</p>
                 </div>
 
                 <div>
