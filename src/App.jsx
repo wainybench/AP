@@ -62,7 +62,7 @@ function App() {
             {/*Bg Overlay*/}
             <div 
               className="absolute inset-0 bg-white/80 backdrop-blur-sm transition-opacity"
-              onClick={() => setShowModal(false)} SS
+              onClick={() => setShowModal(false)}
             ></div>
 
             {/*Info Panel*/}

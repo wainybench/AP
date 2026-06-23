@@ -37,14 +37,14 @@ html.lenis body {
   transition-behavior: allow-discrete;
 }
 
-/* Nuke the scrollbar globally for the entire page */
+/* no scrollbar globally */
 html, body, #root {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar, #root::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none;
 }
 .counter {
   font-size: 16px;

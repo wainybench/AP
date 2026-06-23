@@ -1,5 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef} from 'react'
 import ScrambleText from './scramble';
+import Hori from './horiscroll';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const[loading, setloading] = useState(true)
@@ -25,12 +31,26 @@ function App() {
   }, []);
 
   //pARA MATH
-    useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const heroBgRef = useRef(null);
 
+    useGSAP(() => {
+      gsap.to(heroBgRef.current, {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroBgRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+  //   useEffect(() => {
+  //   const handleScroll = () => setOffsetY(window.scrollY);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
  
 
@@ -42,12 +62,12 @@ function App() {
    
 
       {/*Main Page*/}
-      <main className="grow flex flex-col">
+      <main className="grow">
         
         {/*Hero*/}
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
           
-          <div 
+          <div ref = {heroBgRef}
             className="absolute inset-0 z-0 bg-[url('https://static.wixstatic.com/media/7d702f_ec94b82de6e6402f8e40f08f63bd6a54~mv2.png')] bg-cover bg-top bg-no-repeat scale-[1.15]"
             style={{ transform: `translateY(${offsetY * 0.3}px)` }}
           >
@@ -76,6 +96,11 @@ function App() {
               </div>
             </div>
         </section>
+
+        {/* hori scroll ani */}
+        <Hori />
+        {/* End of hori scroll ani */}
+
         {/*Video bg*/}
         <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden mb-10">
           
@@ -105,6 +130,11 @@ What began as an initiative by six passionate students has grown into a multidis
 
           </div>
         </section>
+        {/* Viceo bg end */}
+
+
+
+        {/* Spnsors */}
         <section className="relative w-full min-h-[80vh] flex-col text-center overflow-hidden mt">
               <h1 className="text-4xl text-black font-bold tracking-wide align-center items-start mt-20">Our Sponsors</h1>
 
